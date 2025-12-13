@@ -9,5 +9,6 @@ public class Main {
         System.out.println("Attendance value: " + e1.dailyAttendance);
 
         e1.calculateDailyWage();
+        e1.calculateDailyWageUsingSwitch();
     }
 }

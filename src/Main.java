@@ -8,6 +8,6 @@ public class Main {
         e1.checkDailyAttendance();  // determine if present/absent
         System.out.println("Attendance value: " + e1.dailyAttendance);
 
-
+        e1.calculateDailyWage();
     }
 }

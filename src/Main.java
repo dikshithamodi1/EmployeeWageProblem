@@ -10,5 +10,6 @@ public class Main {
 
         e1.calculateDailyWage();
         e1.calculateDailyWageUsingSwitch();
+        e1.calculateMonthlyWage();
     }
 }

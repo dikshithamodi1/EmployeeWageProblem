@@ -5,6 +5,7 @@ public class Employee {
     int hourlyWage=20;
     int fullDay=8;
     int dailyWage;
+    int workingDaysMonths=20;
     static final int partTime=2;
     int partTimeHours=4;
     public void checkDailyAttendance(){
@@ -21,7 +22,7 @@ public class Employee {
             System.out.println("Employee is not present");
         }
     }
-    public void calculateDailyWage(){
+    public int calculateDailyWage(){
         if (dailyAttendance==present){
             dailyWage=hourlyWage*fullDay;
             System.out.println("Daily wage: " + dailyWage);
@@ -33,6 +34,7 @@ public class Employee {
             dailyWage=0;
             System.out.println("No Pay");
         }
+        return dailyWage;
     }
     // UC4: Calculate Daily Wage using Switch Case
     public void calculateDailyWageUsingSwitch() {
@@ -47,5 +49,17 @@ public class Employee {
                 dailyWage = 0;
         }
         System.out.println("Daily Wage using switch: " + dailyWage);
+    }
+    //UC5
+    public int calculateMonthlyWage(){
+        int totalMonthlyWage = 0;
+        for (int day = 1; day <= workingDaysMonths; day++) {
+            System.out.println("Day " + day + ":");
+            checkDailyAttendance();
+            totalMonthlyWage = totalMonthlyWage + calculateDailyWage();
+            System.out.println();
+        }
+        System.out.println("Total Monthly Wage (20 Days): " + totalMonthlyWage);
+        return totalMonthlyWage;
     }
 }

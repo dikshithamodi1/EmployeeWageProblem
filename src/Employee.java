@@ -62,4 +62,27 @@ public class Employee {
         System.out.println("Total Monthly Wage (20 Days): " + totalMonthlyWage);
         return totalMonthlyWage;
     }
+    // UC6: Calculate wage till 100 hours or 20 days
+    public void calculateWageTillCondition() {
+        int totalWage = 0;
+        int totalWorkingHours = 0;
+        int totalWorkingDays = 0;
+        while (totalWorkingHours < 100 && totalWorkingDays < 20) {
+            totalWorkingDays++;
+            System.out.println("Day " + totalWorkingDays + ":");
+            checkDailyAttendance();
+            if (dailyAttendance == present) {
+                totalWorkingHours += fullDay;
+                totalWage += hourlyWage * fullDay;
+            } else if (dailyAttendance == partTime) {
+                totalWorkingHours += partTimeHours;
+                totalWage += hourlyWage * partTimeHours;
+            }
+            System.out.println("Total Hours so far: " + totalWorkingHours);
+            System.out.println();
+        }
+        System.out.println("Total Working Days: " + totalWorkingDays);
+        System.out.println("Total Working Hours: " + totalWorkingHours);
+        System.out.println("Total Wage till condition: " + totalWage);
+    }
 }

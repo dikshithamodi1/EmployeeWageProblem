@@ -67,6 +67,7 @@ public class Employee {
         int totalWage = 0;
         int totalWorkingHours = 0;
         int totalWorkingDays = 0;
+
         while (totalWorkingHours < 100 && totalWorkingDays < 20) {
             totalWorkingDays++;
             System.out.println("Day " + totalWorkingDays + ":");
